@@ -14,4 +14,12 @@
   <img src= "{{ mission_data.featured_img_url }}" alt="testing">
   <p>image link: {{ mission_data.featured_img_url }}</p>
   <p>more testing: {{ mission_data.news_title }} </p>
+
+  <div class="table">
+    <table>{{ mission_data.comparisons_html | safe }}</table>
+  </div>
+  <p>
+    {{ mission_data.hemisphere_img_urls[0].title}}
+  </p>
+  <img src= "{{ mission_data.hemisphere_img_urls[0].img_url }}">
 </body>

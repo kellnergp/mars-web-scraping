@@ -113,7 +113,7 @@ def scrape():
     links.remove('#')
 
     # create empty list for result dictionaries
-    hemisphere_image_urls = []
+    hemisphere_img_urls = []
 
     # navigate to each subpage to find title and image link
     for link in links:
@@ -132,7 +132,7 @@ def scrape():
         title = soup.find('h2', class_='title').text
         
         # find the link to the 'Original' image on each page
-        href = soup.find('a', string='Original')['href']
+        href = soup.find('img', class_='wide-image')['src']
         
         # create full image url
         img_result_url = hemi_url + href
@@ -141,7 +141,7 @@ def scrape():
         hemi_dict = {'title': title, 'img_url': img_result_url}
         
         # append dictionary to list
-        hemisphere_image_urls.append(hemi_dict)
+        hemisphere_img_urls.append(hemi_dict)
 
     # close browser
     browser.quit()
@@ -153,7 +153,7 @@ def scrape():
                 'featured_img_url': featured_image_url,
                 'comparisons_html': comparisons_html,
                 'profile_html': profile_html,
-                'hemisphere_image_urls': hemisphere_image_urls}
+                'hemisphere_img_urls': hemisphere_img_urls}
 
     # return final result
     return data_dict
