@@ -1,5 +1,5 @@
 # Dependencies
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, jsonify
 from flask_pymongo import PyMongo
 import scrape_mars
 
@@ -9,9 +9,14 @@ app = Flask(__name__)
 # Use PyMongo to establish Mongo connection
 mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 
+@app.route("/")
+def home():
 
-data_dict = scrape_mars.scrape()
+    # Find one record of data from the mongo database
+    mission_data = mongo.db.collection.find_one()
 
+    # Return template and data
+    return render_template("index.html", mission_data=mission_data)
 
 # Route that will trigger the scrape function
 @app.route("/scrape")
