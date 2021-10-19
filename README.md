@@ -103,6 +103,8 @@ Quit the browser.
 
 ### scrape_mars.py
 
+Script: https://github.com/kellnergp/web-scraping-challenge/blob/main/Missions_to_Mars/scrape_mars.py
+
 Create a Python script 'scrape_mars.py'.
 
 Define a function, scrape() which contains the Python code from the Jupyter Notebook from step 1.
@@ -121,6 +123,8 @@ Add a step to condense the results from scraping each site in one dictionary, 'd
 Return 'data_dict' as the output of the scrape() function.
 
 ### Flask App
+
+App Script: https://github.com/kellnergp/web-scraping-challenge/blob/main/Missions_to_Mars/app.py
 
 Create a Python app, 'app.py' and import dependencies including: Flask, render_template, and redirect from flask, PyMongo from flask_pymongo, and the scrape_mars python script from the previous step.
 
