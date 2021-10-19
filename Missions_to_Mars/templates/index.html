@@ -16,9 +16,11 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
     <div class="row">
-      <h3>Latest Mars News</h3>
-      <h4>{{ mission_data.news_title }}</h4>
-      <p>{{ mission_data.news_p }}</p>
+      <div class="col-md-12">
+        <h3>Latest Mars News</h3>
+        <h4>{{ mission_data.news_title }}</h4>
+        <p>{{ mission_data.news_p }}</p>
+      </div>
     </div>
     <div class="row">
       <div class="col-md-8">
@@ -32,24 +34,37 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <h3 style="text-align:center">Mars Hemispheres</h3>
+      <hr>
+      <div class="col-md-3">
+        <div class="card border-info mb-3" style="width: 100%;">
+          <img class="card-img-top img-thumbnail" src="{{ mission_data.hemisphere_img_urls[0].img_url }}" alt=hemi1>
+          <h4 class="card-title">{{ mission_data.hemisphere_img_urls[0].title}}</h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card border-info mb-3" style="width: 100%;">
+          <img class="card-img-top img-thumbnail" src="{{ mission_data.hemisphere_img_urls[1].img_url }}" alt=hemi2>
+          <h4 class="card-title">{{ mission_data.hemisphere_img_urls[1].title}}</h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card border-info mb-3" style="width: 100%;">
+          <img class="card-img-top img-thumbnail" src="{{ mission_data.hemisphere_img_urls[2].img_url }}" alt=hemi3>
+          <h4 class="card-title">{{ mission_data.hemisphere_img_urls[2].title}}</h4>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card border-info mb-3" style="width: 100%;">
+          <img class="card-img-top img-thumbnail" src="{{ mission_data.hemisphere_img_urls[3].img_url }}" alt=hemi4>
+          <h4 class="card-title">{{ mission_data.hemisphere_img_urls[3].title}}</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <hr>
+    </div>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  <h1>testing, testing</h1>
-  <img src= "{{ mission_data.featured_img_url }}" alt="testing">
-  <p>image link: {{ mission_data.featured_img_url }}</p>
-  <p>more testing: {{ mission_data.news_title }} </p>
 
-  <div class="table">
-    <table>{{ mission_data.comparisons_html | safe }}</table>
-  </div>
-  <p>
-    {{ mission_data.hemisphere_img_urls[0].title}}
-  </p>
-  <img src= "{{ mission_data.hemisphere_img_urls[0].img_url }}">
 </body>
