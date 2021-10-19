@@ -98,3 +98,54 @@ Create a dictionary, 'hemi_dict', with the format {'title': title, 'img_url': im
 Append 'hemi_dict' to the list, 'hemisphere_img_urls' and then exit the for loop.
 
 Quit the browser.
+
+## Step 2 - MongoDB and Flask Application
+
+### scrape_mars.py
+
+Create a Python script 'scrape_mars.py'.
+
+Define a function, scrape() which contains the Python code from the Jupyter Notebook from step 1.
+
+Remove the intervening browser close an open commands to use 1 browser throughout the function.
+
+Add a step to condense the results from scraping each site in one dictionary, 'data_dict', with the format:
+
+{'news_title': news_title,
+                'news_p': news_p,
+                'featured_img_url': featured_img_url,
+                'comparisons_html': comparisons_html,
+                'profile_html': profile_html,
+                'hemisphere_img_urls': hemisphere_img_urls}
+                
+Return 'data_dict' as the output of the scrape() function.
+
+### Flask App
+
+Create a Python app, 'app.py' and import dependencies including: Flask, render_template, and redirect from flask, PyMongo from flask_pymongo, and the scrape_mars python script from the previous step.
+
+Use standard Flask structure to create an instance of Flask.
+
+Connect to a Mongo database with a PyMongo(app, uri="mongodb://localhost:27017/mars_app") function, stored as 'mongo'.
+
+#### Home Route
+
+Establish a home route at "/" and define a home() function.
+
+Find a data record in the Mongo database by calling mongo.db.collection.find_one() and storing the result as 'mission_data'.
+
+Return a render_template() function that will send 'mission_data' to a template, 'index.html'.
+
+#### Scraping Route
+
+Establish a route at "/scrape" and define a scrape() function.
+
+Within the function, run the scrape_mars.scrape() function and store the result as 'mars_data'.
+
+Use a mongo.db.collection.update({}, mars_data, upsert=True) function to send the new version of the scraped data to the Mongo database.
+
+Return a redirect to the home route "/".
+
+### HTML Template
+
+
