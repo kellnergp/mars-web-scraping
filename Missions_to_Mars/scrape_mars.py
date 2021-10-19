@@ -74,8 +74,8 @@ def scrape():
     comparisons_df = comparisons_df.rename(columns={'Mars - Earth Comparison': 'Attribute'})
 
     # convert the dfs to html table strings
-    comparisons_html = comparisons_df.to_html(classes='table table-striped')
-    profile_html = profile_df.to_html(classes='table table-striped')
+    comparisons_html = comparisons_df.to_html(classes='table table-striped', index=False)
+    profile_html = profile_df.to_html(classes='table table-striped', index=False)
 
     # Mars Hemispheres
     # -------------------------------------------------
