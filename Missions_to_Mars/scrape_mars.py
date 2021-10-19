@@ -50,7 +50,7 @@ def scrape():
     featured_img_path = soup.find('img', class_='headerimage fade-in')['src']
 
     # add the image path to the url to find the full url for the featured image
-    featured_image_url = image_url + featured_img_path
+    featured_img_url = image_url + featured_img_path
 
     # Mars Facts
     # --------------------------------------------------
@@ -150,7 +150,7 @@ def scrape():
     # -----------------------------------------------------
     data_dict = {'news_title': news_title,
                 'news_p': news_p,
-                'featured_img_url': featured_image_url,
+                'featured_img_url': featured_img_url,
                 'comparisons_html': comparisons_html,
                 'profile_html': profile_html,
                 'hemisphere_img_urls': hemisphere_img_urls}
