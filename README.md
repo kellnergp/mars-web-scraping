@@ -54,5 +54,27 @@ Adjust the comparisons_df column names to 'Attribute', 'Mars', and 'Earth'.
 
 Quit the browser.
 
-Use a pandas df.to_html(classes='table table-striped', index=False) function to save each table as an html string.
+Use a pandas df.to_html(classes='table table-striped', index=False) function to save each table as an html string representation of tables.
 
+### Mars Hemispheres
+
+Open a new browser.
+
+Save the Mars Hemispheres site url ('https://marshemispheres.com/') and visit it with the browser.
+
+Store the page's html and use it to create a BeautifulSoup object.
+
+Use a find_all() function on the BS object to find all \<a class='itemLink product-item'> tags and save the search result as a list object, 'items'.
+
+Create an empty list, 'links' to store forthcoming subpage links.
+
+Use a for loop to iterate through every 'item' in the 'items' object.
+
+Within the loop, run a try-except with the try clause attempting to store the \['href'] attribute of the 'item' as 'link and the except clause being a command to 
+continue to the next loop iteration.
+
+After the try-except, within the for loop, if 'link' is not in 'links' append 'link' to the list.
+
+Following the conclusion of the loop, remove '#' from the 'links' list.
+
+Create an empty list, 'hemisphere
