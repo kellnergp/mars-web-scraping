@@ -152,4 +152,58 @@ Return a redirect to the home route "/".
 
 ### HTML Template
 
+HTML Script: https://github.com/kellnergp/web-scraping-challenge/blob/main/Missions_to_Mars/templates/index.html
 
+Create an HTML document, 'index.html'.
+
+In the \<head> section, set the meta for the viewport, entitle the page 'Mission to Mars', and link to the Bootstrap stylesheet.
+
+#### \<body>
+
+Set the rest of the content inside a Bootstrap \<div class='container-fluid'> so that it will scale to changing viewport size.
+
+At the top of the container, set a 'jumbotron text-center' class \<div>. 
+
+Within that section, set an \<h1> header reiterating the page title and a Bootstrap button linking to the "/scrape" route of the app with a text indication that clicking it will scrape new data.
+
+The next \<div> within the container is a 'row'.
+
+Within this row is only a \<div class='col-md-12'> which contains an \<h3> sub-header with the text 'Latest Mars News', an \<h4> with text calling the 'news_title' from 
+'mission_data', and a \<p> with text pulled from {{ mission_data.news_p }}.
+
+After the first row is closed, set another 'row' \<div>.
+
+Within that row, set two columns; one 'col-md-8' and one 'col-md-4'.
+
+Inside the 'col-md-8', place a \<h3> with the text 'Featured Mars Image' followed by an \<img class='img-fluid'> sourced from mission_data.featured_img_url.
+
+Inside the 'col-md-4', place a \<h3> with the text 'Mars Facts' followed by a Bootstrap \<div class='table-responsive'>.
+
+Within the Bootstrap table, call the comparisons table from 'mission_data' in the form {{ mission_data.comparisons_html | safe }} to let Flask know it is safe to run the external table code.
+
+Create a third \<div class='row'>.
+
+The first thing in row three is a \<h3> tag styled to be center-aligned with the text 'Mars Hemispheres'.
+
+After the header, place a \<hr> tag for the sake of pleasant formatting.
+
+Following the horizontal rule, establish four 'col-md-3' class \<div> tags.
+
+Inside each column, set a Bootstrap card \<div> with a 'card-img top' pulled from 'mission_data.hemisphere_img_urls[num].img_url' and a 'card-title' pulled from 
+'mission_data.hemisphere_img_urls[num].title'.
+
+For each column, replace num with 0, 1, 2, and 3 respectively.
+
+Each card image should also have a secondary class of 'img-thumbnail' to scale the images down to fit.
+
+After the columns, created one more \<div class='row> with a \<hr> inside of it for formatting.
+
+## Step 3 - Screenshots
+
+Screenshots were taken of the Flask app running in Google Chrome browser.
+
+Screenshot links:
+
+https://github.com/kellnergp/web-scraping-challenge/blob/main/Missions_to_Mars/Screenshots/screenshot_top.png
+
+https://github.com/kellnergp/web-scraping-challenge/blob/main/Missions_to_Mars/Screenshots/screenshot_bottom.png
