@@ -1,4 +1,17 @@
-# web-scraping-challenge
+# Mars News Scraping
+
+## Overview
+
+
+
+## Tools Used
+
+
+
+# Code Walkthrough
+
+<details>
+  <summary>Click to expand!</summary>
 
 ## Step 1 - Scraping
 
@@ -207,3 +220,9 @@ Screenshot links:
 https://github.com/kellnergp/web-scraping-challenge/blob/main/Missions_to_Mars/Screenshots/screenshot_top.png
 
 https://github.com/kellnergp/web-scraping-challenge/blob/main/Missions_to_Mars/Screenshots/screenshot_bottom.png
+  
+  </details>
+  
+## Contact
+  
+  Galen Kellner: kellnergp@gmail.com
