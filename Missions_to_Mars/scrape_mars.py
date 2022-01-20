@@ -12,7 +12,7 @@ def scrape():
     # page uses js to load in content so straight bs scrape won't get everything
     # use splinter to open a browser and scrape that
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless=False)
+    browser = Browser('chrome', **executable_path, headless=True)
 
     # establish mars news site url
     url = 'https://redplanetscience.com/'

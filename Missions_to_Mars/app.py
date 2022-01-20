@@ -9,6 +9,10 @@ app = Flask(__name__)
 # Use PyMongo to establish Mongo connection
 mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 
+# scrape an initial version of the data and push it to the db
+init_mars_data = scrape_mars.scrape()
+mongo.db.collection.update({}, init_mars_data, upsert=True)
+
 # home route
 @app.route("/")
 def home():
