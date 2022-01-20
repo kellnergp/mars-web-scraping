@@ -8,7 +8,9 @@ A Jupyter Notebook script was used to develop the web-scraping code which was th
 
 The Flask app contains routes to scrape updated information, store the data in a Mongo db using PyMongo, and render the scraped data into an HTML template.
 
-![DashPreview]()
+The template uses Bootstrap to assemble a page design including a button to scrape new data.
+
+![DashPreview](/Missions_to_Mars/Screenshots/dash_top.png)
 
 ## Tools Used
 
@@ -19,6 +21,10 @@ BeautifulSoup
 PyMongo
 
 Flask
+
+HTML
+
+Bootstrap
 
 # Code Walkthrough
 
