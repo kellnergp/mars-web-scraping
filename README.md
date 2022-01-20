@@ -2,11 +2,23 @@
 
 ## Overview
 
+This project uses the BeautifulSoup Python library to access a series of informational sites about Mars, collate a selection of information, and present it in an aesthetically pleasing way via a Flask-based dashboard page.
 
+A Jupyter Notebook script was used to develop the web-scraping code which was then assembled into a python function to be called from a Flask app.
+
+The Flask app contains routes to scrape updated information, store the data in a Mongo db using PyMongo, and render the scraped data into an HTML template.
+
+![DashPreview]()
 
 ## Tools Used
 
+Python
 
+BeautifulSoup
+
+PyMongo
+
+Flask
 
 # Code Walkthrough
 
